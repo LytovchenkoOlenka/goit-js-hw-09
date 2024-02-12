@@ -23,6 +23,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.nav {
+  padding: 32px;
+}
+
 .nav-list {
   display: flex;
   gap: 16px;
