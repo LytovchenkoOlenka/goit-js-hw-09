@@ -73,7 +73,7 @@ const gallery = document.querySelector('.gallery');
 
 images.forEach(image => {
   gallery.insertAdjacentHTML(
-    'afterbegin',
+    'beforeend',
     `<li class="gallery-item">
   <a class="gallery-link" href=${image.original}>
     <img
