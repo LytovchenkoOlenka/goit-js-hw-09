@@ -13,19 +13,19 @@ feedbackForm.addEventListener('input', function () {
   localStorage.setItem('feedback-form-state', JSON.stringify(currentState));
 });
 
-const storedState = JSON.parse(
-  localStorage.getItem('feedback-form-state') || {}
-);
+if (localStorage.getItem('feedback-form-state') !== null) {
+  const storedState = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-emailInput.value = storedState.email || '';
-messageInput.value = storedState.message || '';
+  emailInput.value = storedState.email || '';
+  messageInput.value = storedState.message || '';
+}
 
 feedbackForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const currentData = {
-    email: emailInput.value,
-    message: messageInput.value,
+    email: emailInput.value.trim(),
+    message: messageInput.value.trim(),
   };
 
   if (!currentData.email || !currentData.message) {

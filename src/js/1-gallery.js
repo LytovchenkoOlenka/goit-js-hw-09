@@ -89,15 +89,9 @@ images.forEach(image => {
 
 const options = {
   captionsData: 'alt',
-  captionPosition: 'bottom',
   captionDelay: 250,
 };
 
-const lightbox = new SimpleLightbox('.gallery-link', options);
+const lightbox = new SimpleLightbox('.gallery a', options);
 
-gallery.addEventListener('click', event => {
-  event.preventDefault();
-  if (event.target.nodeName === 'IMG') {
-    lightbox.open();
-  }
-});
+lightbox.on('show.simplelightbox');
